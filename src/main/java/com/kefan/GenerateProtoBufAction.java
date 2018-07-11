@@ -42,13 +42,13 @@ public class GenerateProtoBufAction extends AnAction {
 				return;
 			}
 
+			String command ="protoc --proto_path=" + file.getParent().getPath() + " " + "--go_out=plugins=grpc:"+file.getParent().getPath()+" "+ file.getPath();
+
+
 			try {
 
-				String command ="protoc --proto_path=" + file.getParent().getPath() + " " + "--go_out=plugins=grpc:. "+ file.getPath();
 
-
-
-				Process process = Runtime.getRuntime().exec(new String[]{command});
+				Process process = Runtime.getRuntime().exec(command);
 
 
 				int exitValue = process.waitFor();
@@ -71,14 +71,12 @@ public class GenerateProtoBufAction extends AnAction {
 			} catch (IOException e1) {
 				e1.printStackTrace();
 
-				Messages.showErrorDialog(e1.getMessage(), "exception");
+				Messages.showErrorDialog(e1.getMessage()+" "+command, "exception");
 
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
-				Messages.showErrorDialog(e1.getMessage(), "exception");
+				Messages.showErrorDialog(e1.getMessage()+" "+command, "exception");
 			}
-//				}
-//			}).start();
 
 		} else {
 			Messages.showErrorDialog(project, "file not found", "Select Failed");
@@ -91,7 +89,6 @@ public class GenerateProtoBufAction extends AnAction {
 	public void update(AnActionEvent e) {
 
 		String extension = getFileExtension(e.getDataContext());
-
 		e.getPresentation().setVisible(extension!=null&&extension.equals(EXTENSION_NAME));
 
 	}
