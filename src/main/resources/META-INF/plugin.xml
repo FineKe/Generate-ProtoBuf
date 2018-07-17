@@ -17,13 +17,8 @@
     <depends>com.intellij.modules.lang</depends>
 
 
-
     <actions>
         <action class="com.kefan.GenerateProtoBufAction" id="ed" text="Generate ProtoBuf" description="choose a file and complie it" >
-            <add-to-group group-id="ProjectViewPopupMenu"/>
-        </action>
-
-        <action class="com.kefan.HelloAction" id="hello" text="hello">
             <add-to-group group-id="ProjectViewPopupMenu"/>
         </action>
     </actions>

@@ -26,7 +26,6 @@ public class GenerateProtoBufAction extends AnAction {
 		Project project=e.getProject();
 
 
-
 		String extension = getFileExtension(e.getDataContext());
 
 		if (extension!=null&&EXTENSION_NAME.equals(extension)) {
