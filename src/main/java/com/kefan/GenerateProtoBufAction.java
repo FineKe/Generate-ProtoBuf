@@ -4,7 +4,9 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.kefan.ui.GenerateConfigDialog;
 
+import java.awt.*;
 import java.io.IOException;
 
 /**
@@ -23,7 +25,23 @@ public class GenerateProtoBufAction extends AnAction {
 	@Override
 	public void actionPerformed(AnActionEvent e) {
 
-		Project project=e.getProject();
+//		Project project=e.getProject();
+
+		GenerateConfigDialog dialog = new GenerateConfigDialog(e);
+		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
+
+		int width=400;
+		int height=300;
+		dialog.setBounds((dimension.width-width)/2,(dimension.height-height)/2,width,height);
+		dialog.pack();
+
+		dialog.setVisible(true);
+
+//		System.exit(0);
+
+		/**
+
+
 
 
 		String extension = getFileExtension(e.getDataContext());
@@ -80,6 +98,7 @@ public class GenerateProtoBufAction extends AnAction {
 		} else {
 			Messages.showErrorDialog(project, "file not found", "Select Failed");
 		}
+		 **/
 
 
 	}
@@ -92,7 +111,7 @@ public class GenerateProtoBufAction extends AnAction {
 
 	}
 
-	public static String getFileExtension(DataContext dataContext) {
+	public  String getFileExtension(DataContext dataContext) {
 		VirtualFile virtualFile =PlatformDataKeys.VIRTUAL_FILE.getData(dataContext);
 		return virtualFile == null?null:virtualFile.getExtension();
 	}

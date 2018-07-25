@@ -4,21 +4,19 @@
     <vendor email="litesky@foxmail.com" url="http://blog.codingfine.com">codingFine</vendor>
 
     <description><![CDATA[
-    This is a plugin to compile protobuf file conveniently<br>
-
-    ]]></description>
+    This is a plugin to compile protobuf file conveniently<br>]]></description>
 
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
     </extensions>
 
-
     <depends>com.intellij.modules.lang</depends>
 
 
     <actions>
-        <action class="com.kefan.GenerateProtoBufAction" id="ed" text="Generate ProtoBuf" description="choose a file and complie it" >
+        <action class="com.kefan.GenerateProtoBufAction" id="ed" text="Generate ProtoBuf"
+                description="choose a file and complie it">
             <add-to-group group-id="ProjectViewPopupMenu"/>
         </action>
     </actions>
