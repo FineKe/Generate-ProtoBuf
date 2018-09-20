@@ -38,6 +38,7 @@ public class GenerateConfigDialog extends JDialog {
 		setModal(true);
 		getRootPane().setDefaultButton(buttonOK);
 
+		initView();
 		//初始胡数据
 		initData();
 
@@ -101,6 +102,10 @@ public class GenerateConfigDialog extends JDialog {
 
 	}
 
+	private void initView() {
+		this.setTitle("Configuration");
+	}
+
 	private void onOK() {
 		// add your code here
 		//逻辑处理部分
@@ -112,23 +117,6 @@ public class GenerateConfigDialog extends JDialog {
 		// add your code here if necessary
 		dispose();
 	}
-
-//	public static void main(String[] args) {
-//		GenerateConfigDialog dialog = new GenerateConfigDialog();
-//
-//		Dimension dimension = Toolkit.getDefaultToolkit().getScreenSize();
-//
-//		int width=400;
-//		int height=300;
-//
-//		dialog.setBounds((dimension.width-width)/2,(dimension.height-height)/2,width,height);
-//
-//
-//		dialog.pack();
-//		dialog.setVisible(true);
-//		System.exit(0);
-//	}
-
 
 	private void initData() {
 
@@ -143,8 +131,6 @@ public class GenerateConfigDialog extends JDialog {
 
 		pluginMap.put("None", "none");
 		pluginMap.put("GRPC", "grpc");
-
-
 	}
 
 	private void process() {

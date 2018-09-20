@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.3.7'
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'java'
+
+group 'com.kefan'
+version '1.0.3'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+intellij {
+    version '2018.2.1'
+}
+patchPluginXml {
+    changeNotes
+    """
+      1.0.2<br>
+      <em>Add GUI to Operate conveniently and support to multi language. like Java 、C# and so on.</em>
+      
+      
+    """
+    """
+      1.0.3
+      <br>
+      <em>
+      Beautify the UI.
+      Adapt to the IntellijPlatform 2018.2.1 version.
+      </em>
+    """
+}
