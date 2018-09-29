@@ -2,7 +2,7 @@
 [详细使用](https://blog.codingfine.com/archives/protobuf-lan-ren-cha-jian)
 
 # 使用：
-## 1.前提:
+## 环境配置:
     proto 工具下载
     
     
@@ -12,13 +12,9 @@
     https://repo1.maven.org/maven2/com/google/protobuf/protoc/ protoc 放在环境变量的 path 中
     
     
-    2、下载生成 go 代码插件(可选)
+    2、下载生成 go 代码插件
     
     
     go get -u github.com/golang/protobuf/protoc-gen-go
     
-    3.grpc 包下载
-    
-    go get -u google.golang.org/grpc
-    
-## 2.选中.proto文件，右键Generate ProtoBuf 即可
+## 选中.proto文件，右键Generate ProtoBuf 即可
