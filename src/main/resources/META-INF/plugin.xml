@@ -19,6 +19,7 @@
     <li>Adapt to the IntellijPlatform 2018.2.1 version</li>
     </p>]]></change-notes>
 
+    <idea-version since-build="107.121"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
