@@ -159,7 +159,7 @@ public class GenerateConfigDialog extends JDialog {
 
 			//命令生成处理
 
-			String command = "";
+			String command ="";
 
 			//优先使用配置的protoc 路径
 			if (persistentService.getConfig().getProtocPath() != null&&persistentService.getConfig().getProtocPath().endsWith("protoc")) {

@@ -18,3 +18,6 @@
     go get -u github.com/golang/protobuf/protoc-gen-go
     
 ## 选中.proto文件，右键Generate ProtoBuf 即可
+
+# protoc path 配置
+![](https://ws3.sinaimg.cn/large/006tNbRwgy1fvynhixalxj31kw12kgq5.jpg)

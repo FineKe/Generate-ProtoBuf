@@ -2,24 +2,29 @@
     <id>com.kefan.generate-protobuf</id>
     <name>Generate ProtoBuf</name>
     <vendor email="litesky@foxmail.com" url="http://blog.codingfine.com">codingFine</vendor>
-
+    <version>1.1.0</version>
     <description><![CDATA[
     This is a plugin to compile protobuf file conveniently<br>
     About to use it follow https://blog.codingfine.com/archives/protobuf-lan-ren-cha-jian]]></description>
     <change-notes><![CDATA[
     <p>
-    1.0.2
+    1.1.0
     <ul>
-    <li>Add GUI to Operate conveniently</li>
-    <li>Support to multi language. like Java 、C# and so on</li>
+    <li>now you can configurate the protoc path</li>
     </ul>
     1.0.3
     <ul>
     <li>Beautify the UI</li>
     <li>Adapt to the IntellijPlatform 2018.2.1 version</li>
+    </ul>
+    1.0.2
+    <ul>
+    <li>Add GUI to Operate conveniently</li>
+    <li>Support to multi language. like Java 、C# and so on</li>
+    </ul>
     </p>]]></change-notes>
 
-    <idea-version since-build="107.121"/>
+    <idea-version since-build="173"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
