@@ -23,14 +23,15 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
-        <applicationConfigurable implementation="com.kefan.ui.GPConfiguration"/>
+        <applicationConfigurable implementation="com.kefan.config.GPConfiguration"/>
+        <applicationService serviceImplementation="com.kefan.service.ConfigurationPersistentService"/>
     </extensions>
 
     <depends>com.intellij.modules.lang</depends>
 
 
     <actions>
-        <action class="com.kefan.GenerateProtoBufAction" id="ed" text="Generate ProtoBuf"
+        <action class="com.kefan.action.GenerateProtoBufAction" id="ed" text="Generate ProtoBuf"
                 description="choose a file and complie it">
             <add-to-group group-id="ProjectViewPopupMenu"/>
         </action>

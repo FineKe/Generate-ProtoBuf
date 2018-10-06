@@ -6,6 +6,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.kefan.service.ConfigurationPersistentService;
 
 import javax.swing.*;
 import java.awt.event.*;
@@ -16,6 +17,8 @@ import java.util.Map;
 public class GenerateConfigDialog extends JDialog {
 
 	private static final String EXTENSION_NAME = "proto";
+
+	private ConfigurationPersistentService persistentService = ConfigurationPersistentService.getInstance();
 
 	private AnActionEvent anActionEvent;
 
@@ -153,9 +156,20 @@ public class GenerateConfigDialog extends JDialog {
 			}
 
 
+
 			//命令生成处理
 
-			String command ="protoc --proto_path=" + file.getParent().getPath() + " ";
+			String command = "";
+
+			//优先使用配置的protoc 路径
+			if (persistentService.getConfig().getProtocPath() != null&&persistentService.getConfig().getProtocPath().endsWith("protoc")) {
+				command += persistentService.getConfig().getProtocPath();
+			} else {
+				//使用 系统变量
+				command += "protoc";
+			}
+
+			 command +=" --proto_path=" + file.getParent().getPath() + " ";
 
 			if (!pluginSelected.getText().equals("None")) {
 

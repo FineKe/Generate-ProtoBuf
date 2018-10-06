@@ -1,4 +1,4 @@
-package com.kefan;
+package com.kefan.action;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
